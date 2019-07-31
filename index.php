@@ -33,6 +33,56 @@
    <!-- favicons
 	================================================== -->
 	<link rel="icon" type="image/png" href="favicon.png">
+
+	<style>
+		.tabControls .tabControl:first-child {
+			background: #FFA500;
+			color: #ffffff;
+		}
+		.tabControls .tabControl:first-child:hover {
+			background: #ffffff;
+		}
+		.tabControls .tabControl:first-child:hover a {
+			color: #000000;
+		}
+		.tabControl {
+			border-radius: 5px;
+		}
+		.tabControl:hover {
+			background: #FFA500;
+		}
+		.tabControl:hover a{
+			color: #ffffff;
+		}
+		.tabControl a {
+			color: #000000;
+		}
+		.tabControl a:hover, .tabControl a:active, .tabControl a:focus {
+			text-decoration: none;
+			background: none;
+		}
+		.parentToggleNav li{
+			padding: 10px 40px;
+			border: 1px solid #000000;
+			border-radius: 5px;
+		}
+		.parentToggleNav li a:hover, .parentToggleNav li a:active, .parentToggleNav li a:focus{
+			text-decoration: none;
+			background: none;
+		}
+		.parentToggleNav li a{
+			color: #000000;
+		}
+		.parentToggleNav li.active{
+			background: #000000;
+		}
+		.parentToggleNav li.active a{
+			color: #ffffff;
+		}
+		.parentToggleNav li:not(:last-child){
+			margin-right: 10px;
+		}
+	</style>
 	<script>
 		const second = 1000,
 				minute = second * 60,
@@ -137,9 +187,19 @@
 								 <!--involved in photographers work and makes it easier for them to spend more time -->
 								 <!--behind their lenses.-->
 				  			<!--</p>			  				-->
-			  			</div>			  						  			   	 <div class="modal-body" style="margin-left:-15px">
-                    <button type="button" class="btn btn-secondary"style="background-color:#FFA500;" ><a href="#one" style="color:#000">I'M A PHOTOGRAPHER</a></button>
-                    <button type="button" class="btn btn-secondary" style="background-color:#fff;margin:5px 0 0 0;"><a href="#" style="color:#000">i'm a Subscriber<a></a></button>       
+			  			<!-- </div>			  						  			   	 <div class="modal-body" style="margin-left:-15px"> -->
+					<!-- <button type="button" class="btn btn-secondary"style="background-color:#FFA500;" id="photographerTabControl">
+						<a href="#photographer" style="color:#000" data-toggle="tab">I'm a Photographer</a>
+					</button>
+					<button type="button" class="btn btn-secondary" style="background-color:#fff;margin:5px 0 0 0;" id="subscriberTabControl">
+						<a href="#subscriber" style="color:#000" data-toggle="tab">I'm a Subscriber</a>
+					</button> -->
+					<!-- <a href="#info">Info</a>
+										 -->
+					<div class="tabControls">
+						<button id="photographerControl" class="tabControl"><a data-toggle="tab"  href="#photographer">I'm a Photographer</a></button>
+						<button id="subscriberControl" class="tabControl"><a data-toggle="tab" href="#subscriber">I'm a Subscriber</a></button>
+					</div>
                 
                 </div>		
 
@@ -169,217 +229,191 @@
 
    	<div class="info-overlay"></div>
 
-   	<div class="row">   		
+   <!-- Tab test begins here -->
+   <div class="row" id="registration">   		
    		<div class="col-twelve tabs-wrap">
+		   <ul class="parentToggleNav" id="parentToggle">
+				<li id="aboutTab" class="active"><a data-toggle="tab" href="#about" ><i class="fa fa-user"></i> About</a></li>
+				<li id="photographerTab"><a data-toggle="tab" href="#photographer"><i class="fa fa-camera"></i> Photographer</a></li>
+				<li id="subscriberTab"><a data-toggle="tab" href="#subscriber"><i class="fa fa-rss"></i> Subscribe</a></li>
+			</ul>
 
-   			<ul class="tabs" id="parentToggle"> 
+			<div class="tab-content">
+				<div id="about" class="tab-pane fade in active">
+				<div class="tab-entry">
+					<div class="row tab-entry-intro">
+						<div class="col-twelve with-bottom-line">
 
-	<li id="tab-about" id="tab-about" class="active"><a data-toggle="tab" href="#tab-about">About Us</a></li>
-    <li id="tab-contact" data-id="tab-contact" ><a data-toggle="tab" href="#tab-contact" >Photographers</a></li>
-	<li data-id="tab-subscribe" id="tab-subscribe" ><a data-toggle="tab" href="#tab-subscribe">Subscribers</a></li>
-	
-	<!-- <ul class="nav nav-tabs" style="width: 70%;font-size: 30px;font-weight: bold">
-    <li class="active"><a href="" data-id="tab-about">About Us</a></li>
-    <li id="one" data-id="tab-contact">Photographers</li>
-    <li id="two" data-id="tab-subscribe">Subscribers</li> -->
-    </ul>		
-				<!-- </ul> /tabs -->
+							<h1>Peexoo</h1>
 
-				<div class="tab-container">
+							<p class="lead" style="color:#000;">Peexoo is an Intelligent photography platform, 
+								that helps photographers, find
+							, retain and grow their photography business.
+							</p>
+						</div>   		
+					</div> <!-- /tab-content-intro -->
 
-					<!-- tab content - about
-   				================================================== -->
-					<div id="tab-about" class="tab-content">
-						
-					   <div class="tab-entry">
+					<div class="row about-content tab-entry-content"> 		
+						<div class="about-list block-1-3 block-s-1-2 block-tab-full">
+							<div class="bgrid item">	
+								<span class="icon"><img src="images/a.png" alt=""></span>            
 
-					   	<div class="row tab-entry-intro">
-					   		<div class="col-twelve with-bottom-line">
+								<div class="item-content">	
 
-					   			<h1>Peexoo</h1>
+										<h3 class="h05">Find My Face</h3>
 
-					   			<p class="lead" style="color:#000;">Peexoo is an Intelligent photography platform, 
-								   that helps photographers, find
-								, retain and grow their photography business.
-								</p>
-					   		</div>   		
-					   	</div> <!-- /tab-content-intro -->
+									<p>	Find all pictures taken by photographers during any event you 
+										attended by just taking a selfie of your face.
+									</p>
+									
+								</div> 	         	 
 
-					   	<div class="row about-content tab-entry-content">
-					     		
-					   		<div class="about-list block-1-3 block-s-1-2 block-tab-full">
+								</div> <!-- /bgrid -->
 
-						      	<div class="bgrid item">	
+								<div class="bgrid item">	
 
-						      		<span class="icon"><img src="images/a.png" alt=""></span>            
+									<span class="icon"><img src="images/b.png" alt=""></span>
 
-						            <div class="item-content">	
+								<div class="item-content">	
+									<h3 class="h05">FIND MY PHOTOGRAPHER</h3>
 
-						            	 <h3 class="h05">Find My Face</h3>
+									<p>Never loose beautiful moments from events. Discover and book talented and professional photographers and videographers to cover all your photo and video shoots that need to be captured.</p>
 
-							            <p>	Find all pictures taken by photographers during any event you 
-											attended by just taking a selfie of your face.
-										</p>
-						         		
-						         	</div> 	         	 
+									
+								</div>	                          
 
-									</div> <!-- /bgrid -->
+								</div> <!-- /bgrid -->
 
-									<div class="bgrid item">	
+								<div class="bgrid item">
 
-										<span class="icon"><img src="images/b.png" alt=""></span>
+								<span class="icon"><img src="images/c.png" alt=""></span>
 
-						            <div class="item-content">	
-						            	<h3 class="h05">FIND MY PHOTOGRAPHER</h3>
+								<div class="item-content">
+									<h3 class="h05">PEEXOO MEMORIES</h3>
 
-							            <p>Never loose beautiful moments from events. Discover and book talented and professional photographers and videographers to cover all your photo and video shoots that need to be captured.</p>
+									<p>Pictures and videos sharing made easy. Now you won't lose the best time of your life captured on camera, get unlimited cloud gallery storage space for you to Upload, save and even share your best pictures all in one place.</p>
 
-						         		
-						            </div>	                          
+										
+								</div> 	            	               
 
-								   </div> <!-- /bgrid -->
+								</div> <!-- /bgrid -->
 
-								   <div class="bgrid item">
+								<div class="bgrid item">
 
-								   	<span class="icon"><img src="images/c.png" alt=""></span>
+									<span class="icon"><img src="images/d.png" alt=""></span>
 
-						            <div class="item-content">
-						            	<h3 class="h05">PEEXOO MEMORIES</h3>
+								<div class="item-content">
+									<h3 class="h05">EXPLORE PHOTOS</h3>
 
-							            <p>Pictures and videos sharing made easy. Now you won't lose the best time of your life captured on camera, get unlimited cloud gallery storage space for you to Upload, save and even share your best pictures all in one place.</p>
+									<p>Explore some of the creative works created by photographers coming out of Africa With explore photos you can get a view of trending pictures and videos shared by photographers and celebrants.
+										.</p>
 
-						        			
-						            </div> 	            	               
+									
+								</div>                
 
-								   </div> <!-- /bgrid -->
+								</div> <!-- /bgrid -->
 
-									<div class="bgrid item">
+								<div class="bgrid item">
 
-										<span class="icon"><img src="images/d.png" alt=""></span>
+								<span class="icon"><img src="images/e.png" alt=""></span>
 
-						            <div class="item-content">
-						            	<h3 class="h05">EXPLORE PHOTOS</h3>
+								<div class="item-content">	
+									<h3 class="h05">PEEXOO TOUCH</h3>
 
-							            <p>Explore some of the creative works created by photographers coming out of Africa With explore photos you can get a view of trending pictures and videos shared by photographers and celebrants.
-											.</p>
+									<p>Instant and powerful picture retouching using artificial intelligence. You don't need to worry  if your pictures would come out great or not because with Peexoo touch your pictures are automatically edited by a simple click of a button.</p>
 
-						         		
-						            </div>                
+										
+								</div>	               
 
-									</div> <!-- /bgrid -->
+								</div> <!-- /bgrid -->
 
-								   <div class="bgrid item">
+								<div class="bgrid item">
 
-								   	<span class="icon"><img src="images/e.png" alt=""></span>
+								<span class="icon"><img src="images/f.png" alt=""></span>
 
-						            <div class="item-content">	
-						            	<h3 class="h05">PEEXOO TOUCH</h3>
-
-							            <p>Instant and powerful picture retouching using artificial intelligence. You don't need to worry  if your pictures would come out great or not because with Peexoo touch your pictures are automatically edited by a simple click of a button.</p>
-
-						        			
-						            </div>	               
-
-								   </div> <!-- /bgrid -->
-
-								   <div class="bgrid item">
-
-								   	<span class="icon"><img src="images/f.png" alt=""></span>
-
-						            <div class="item-content">
-						            	 <h3 class="h05">PEEXOO HUB</h3>
-
-							            <p>A strong network of creative photographers and videographers in Africa all in on place, in the form of a creative hub where photographers attend meetups, network, workshops, organise exhibitions and learn more about the community.
-											 </p>
-						        			
-						            </div>	               
-
-								   </div> <!-- /bgrid -->
-
-						      </div> <!-- /about-list --> 
-
-					     	</div> <!-- /row about-content -->
-					     		
-					   </div> <!-- /tab-entry -->
-
-					</div> <!-- /tab-about -->	
-
-
-					<!-- tab content contact
-   				================================================== -->
-					<div id="tab-contact" class="tab-content">
-
-						<div class="tab-entry">
-
-							<div class="row tab-entry-intro">
-					   		<div class="col-twelve with-bottom-line">
-
-					   			<h1>Sign up as a Photographer.</h1>
-
-					   			<p class="lead"></p>
-
-					   		</div>   		
-					   	</div> <!-- /tab-content-intro -->
-
-					   	<div class="row form-wrap tab-entry-content">
-					   		<div class="col-twelve">
-
-					            <!-- form -->
-					            <form name="contactForm" method="post" action="contactsub.php">
-					      			<fieldset>
-
-					                  <div class="form-field">
-					 						   <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
-					                  </div>
-					                  <div class="form-field">
-						      			   <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="">
-						               </div>
-					                  <div class="form-field">
-						     				   <input name="contactSubject" type="text" id="contactSubject" placeholder="Phone Number" value="">
-						     				   
-						               </div>                       
-					                  <div class="form-field">
-					                       <input name="contactMessage" type="text" id="contactSubject" placeholder="Business Name" value="">
-						                 
-						                 	
-						               </div>                      
-					                 <div class="form-field">
-					                <button name="sub" class="button button-primary large">Submit</button>
-
-					                     <div id="submit-loader">
-					                        <div class="text-loader">Sending...</div>                             
-					       				      <div class="s-loader">
-													  	<div class="bounce1"></div>
-													  	<div class="bounce2"></div>
-													  	<div class="bounce3"></div>
-													</div>
-												</div><!-- submit-loader -->
-					                  </div>
-
-					      			</fieldset>
-					      		</form> <!-- /form -->
-
-					            <!-- contact-warning -->
-					            <div id="message-warning">            	
-					            </div>            
-					            <!-- contact-success -->
-					      		<div id="message-success">
-					               <i class="fa fa-check"></i>Your message was sent, thank you!<br>
-					      		</div>
-
-					         </div> <!-- /col-twelve -->					   		
-					   	</div> <!-- /row contact-form -->
-
-						</div> <!-- /tab-entry --> 					
-
-					</div> <!-- /tab-contact -->
-
-
-					<!-- tab content - subscribe
-   				================================================== -->
-					<div id="tab-subscribe" class="tab-content">
-
-						<div class="tab-entry">
+								<div class="item-content">
+										<h3 class="h05">PEEXOO HUB</h3>
+
+									<p>A strong network of creative photographers and videographers in Africa all in on place, in the form of a creative hub where photographers attend meetups, network, workshops, organise exhibitions and learn more about the community.
+											</p>
+										
+								</div>	               
+
+								</div> <!-- /bgrid -->
+
+							</div> <!-- /about-list --> 
+
+						</div> <!-- /row about-content -->
+							
+					</div>
+				</div>
+				<div id="photographer" class="tab-pane fade">
+				<div class="tab-entry">
+					<div class="row tab-entry-intro">
+						<div class="col-twelve with-bottom-line">
+
+							<h1>Sign up as a Photographer.</h1>
+
+							<p class="lead"></p>
+
+						</div>   		
+					</div> <!-- /tab-content-intro -->
+
+					<div class="row form-wrap tab-entry-content">
+						<div class="col-twelve">
+
+							<!-- form -->
+							<form name="contactForm" method="post" action="contactsub.php">
+								<fieldset>
+
+									<div class="form-field">
+											<input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
+									</div>
+									<div class="form-field">
+										<input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="">
+									</div>
+									<div class="form-field">
+											<input name="contactSubject" type="text" id="contactSubject" placeholder="Phone Number" value="">
+											
+									</div>                       
+									<div class="form-field">
+										<input name="contactMessage" type="text" id="contactSubject" placeholder="Business Name" value="">
+										
+										
+									</div>                      
+									<div class="form-field">
+								<button name="sub" class="button button-primary large">Submit</button>
+
+										<div id="submit-loader">
+										<div class="text-loader">Sending...</div>                             
+											<div class="s-loader">
+													<div class="bounce1"></div>
+													<div class="bounce2"></div>
+													<div class="bounce3"></div>
+												</div>
+											</div><!-- submit-loader -->
+									</div>
+
+								</fieldset>
+							</form> <!-- /form -->
+
+							<!-- contact-warning -->
+							<div id="message-warning">            	
+							</div>            
+							<!-- contact-success -->
+							<!-- <div id="message-success">
+								<i class="fa fa-check"></i>Your message was sent, thank you!<br>
+							</div> -->
+
+							</div> <!-- /col-twelve -->					   		
+					</div> <!-- /row contact-form -->
+
+				</div> <!-- /tab-entry --> 	
+				</div>
+				<div id="subscriber" class="tab-pane fade">
+				<!-- <h3>Subscriber</h3>
+				<p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p> -->
+				<div class="tab-entry">
 
 							<div class="row tab-entry-intro">
 					   		<div class="col-twelve with-bottom-line">
@@ -397,30 +431,28 @@
 
 					   			<form class="group" method="POST" action="subtb.php">
 
-										<div class="form-field">					
-						   				<input type="email" value="" name="contactEmail" class="email" placeholder="email address" required="">					   				
-						   			</div>
+                                    <div class="form-field">					
+                                    <input type="email" value="" name="contactEmail" class="email" placeholder="email address" required="">					   				
+                                </div>
 
-							   		<div class="form-field" data-id="tab-contact" >	
-							   			<button name="subs" class="button button-primary large">Submit</button>
+                                <div class="form-field" data-id="tab-contact" >	
+                                    <button name="subs" class="button button-primary large">Submit</button>
 
-							   		</div>
+                                </div>
 
-							   		<label for="mce-EMAIL" class="subscribe-message"></label>
-									
-									</form>
+                                <label for="mce-EMAIL" class="subscribe-message"></label>
+                                
+                                </form>
 
 					   		</div> <!-- /twelve -->
 					   	</div> <!-- subscribe-form -->
 
-						</div> <!-- /tab-entry --> 						
-
-					</div> <!-- /tab-subscribe -->										
-
-				</div> <!-- /tab-container -->
-   			
-   		</div> <!-- twelve -->
-   	</div> <!-- row -->   	
+						</div> <!-- /tab-entry --> 	
+				</div>
+			</div>
+   		</div>
+   </div>
+   <!-- Tab test ends here -->
 
    </section> <!-- /info -->
 
@@ -433,7 +465,7 @@
 
    		<div class="col-twelve cta-content">  
 
-	     		<h2 class="h01"><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Peexoo`</a></h2>
+	     		<h2 class="h01"><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Peexoo</a></h2>
 
 		      <p class="lead">
 Let us begin the countdown as we bring AI and photography together				<!-- Simply type	the promocode in the box labeled “Promo Code” when placing your order. -->	
@@ -498,11 +530,12 @@ Let us begin the countdown as we bring AI and photography together				<!-- Simpl
    <script src="js/main.js"></script>
 
 </body>
+
 <script>
     let parentToggle = $('#parentToggle');
-    console.log(parentToggle);
+    // console.log(parentToggle);
 
-    $('#menu1Control, #menu2Control, #menu3Control').on('click', function() {
+    $('#photographerControl, #subscriberControl').on('click', function() {
         // console.log('Menu2 control clicked!');
         // console.log($(this)[0].id);
         let colectedId = $(this)[0].id;
@@ -512,16 +545,21 @@ Let us begin the countdown as we bring AI and photography together				<!-- Simpl
 
     function setTab (receivedId) {
         console.log(receivedId);
-        parentToggle.children().removeClass('activeTab');
-        if(receivedId == 'tab-about') {
-            $('#tab-about').addClass('activeTab');
-        } else if (receivedId == 'tab-contact') {
-            $('#tab-contact').addClass('activeTab');
-        } else if (receivedId == 'tab-subscribe') {
-            $('#tab-subscribe').addClass('activeTab');
+        parentToggle.children().removeClass('active');
+        if (receivedId == 'photographerControl') {
+            $('#photographerTab').addClass('active');
+        } else if (receivedId == 'subscriberControl') {
+            $('#subscriberTab').addClass('active');
         }
         // $('#'+receivedId).addClass('activeTab');
         // console.log($this);
-    }
+	}
+
+	$('.tabControl').click(function() {
+	   window.location = "#info";
+	   console.log('I\'ve been clicked');
+	});
+	
+	
 </script>
 </html>
